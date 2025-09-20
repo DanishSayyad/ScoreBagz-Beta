@@ -1,0 +1,147 @@
+.brand-font {
+    font-family: 'Kaushan Script', cursive;
+}
+
+.navbar-blur {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.slide-in-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 0.8s ease-out;
+}
+
+.slide-in-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.slide-in-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 0.8s ease-out;
+}
+
+.slide-in-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.scale-in {
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.6s ease-out;
+}
+
+.scale-in.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.product-card {
+    transition: all 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.quality-icon {
+    transition: all 0.3s ease;
+}
+
+.quality-icon:hover {
+    transform: translateY(-10px) scale(1.1);
+}
+
+.review-card {
+    transition: all 0.3s ease;
+    background: linear-gradient(135deg, #ffffff, #f8f9fa);
+}
+
+.review-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.why-buy-card {
+    transition: all 0.4s ease;
+    background: linear-gradient(135deg, #ffffff, #f1f3f4);
+}
+
+.why-buy-card:hover {
+    transform: translateY(-8px) rotate(1deg);
+    box-shadow: 0 20px 40px rgba(239, 68, 68, 0.15);
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.float-animation {
+    animation: float 3s ease-in-out infinite;
+}
+
+.stagger-delay-1 {
+    transition-delay: 0.1s;
+}
+
+.stagger-delay-2 {
+    transition-delay: 0.2s;
+}
+
+.stagger-delay-3 {
+    transition-delay: 0.3s;
+}
+
+.stagger-delay-4 {
+    transition-delay: 0.4s;
+}
+
+.stagger-delay-5 {
+    transition-delay: 0.5s;
+}
+
+.stagger-delay-6 {
+    transition-delay: 0.6s;
+}
+
+.social-icon {
+    transition: all 0.3s ease;
+    color: #9ca3af;
+}
+
+.social-icon:hover.twitter {
+    color: #1DA1F2;
+}
+
+.social-icon:hover.instagram {
+    color: #E4405F;
+}
+
+.social-icon:hover.whatsapp {
+    color: #25D366;
+}

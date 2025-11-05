@@ -86,7 +86,8 @@
 
 .why-buy-card:hover {
     transform: translateY(-8px) rotate(1deg);
-    box-shadow: 0 20px 40px rgba(239, 68, 68, 0.15);
+    /* box-shadow: 0 20px 40px rgba(239, 68, 68, 0.15); */
+    box-shadow: 0 20px 40px rgba(196, 68, 239, 0.15);
 }
 
 @keyframes float {
@@ -144,4 +145,51 @@
 
 .social-icon:hover.whatsapp {
     color: #25D366;
+}
+
+/* Brush stroke scaling */
+.scale-brush-mobile {
+    transform: scale(1.2);
+}
+
+@media (min-width: 768px) {
+    .scale-brush-desktop {
+        transform: scale(1.8);
+    }
+}
+
+/* Pulsing glow effect for badges */
+.badge-glow {
+    border: 2px solid;
+    animation: badge-pulse 2s ease-in-out infinite;
+}
+
+@keyframes badge-pulse {
+    0%, 100% {
+        box-shadow: 0 0 8px rgba(var(--glow-rgb), 0.3);
+    }
+    50% {
+        box-shadow: 0 0 8px rgba(var(--glow-rgb), 1);
+    }
+}
+
+/* Different glow colors for different badge types */
+.badge-glow-green {
+    --glow-rgb: 34, 197, 94;
+    border-color: #22c55e;
+}
+
+.badge-glow-blue {
+    --glow-rgb: 59, 130, 246;
+    border-color: #3b82f6;
+}
+
+.badge-glow-amber {
+    --glow-rgb: 245, 158, 11;
+    border-color: #f59e0b;
+}
+
+.badge-glow-purple {
+    --glow-rgb: 168, 85, 247;
+    border-color: #a855f7;
 }

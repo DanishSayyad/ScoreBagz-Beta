@@ -148,12 +148,21 @@
 
 /* Brush stroke scaling */
 .scale-brush-mobile {
-    transform: scale(1.2);
+    transform: scale(1.5);
+    transform-origin: center center;
 }
 
 @media (min-width: 768px) {
     .scale-brush-desktop {
-        transform: scale(1.8);
+        transform: scale(2.2);
+        transform-origin: center center;
+    }
+}
+
+@media (min-width: 1024px) {
+    .scale-brush-desktop {
+        transform: scale(2.5);
+        transform-origin: center center;
     }
 }
 

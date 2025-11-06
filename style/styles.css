@@ -81,7 +81,6 @@
 
 .why-buy-card {
     transition: all 0.4s ease;
-    background: linear-gradient(135deg, #ffffff, #f1f3f4);
 }
 
 .why-buy-card:hover {

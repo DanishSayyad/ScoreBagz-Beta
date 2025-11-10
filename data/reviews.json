@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "name": "Danish Sayyad",
+    "rating": 5,
+    "image": "assets/sample_2.jpg",
+    "review": "Amazing quality bags! I've been using my leather bag for 2 months now and it still looks brand new. Highly recommend ScoreBagz!"
+  },
+  {
+    "id": 2,
+    "name": "Abdul Mulla",
+    "rating": 5,
+    "image": "assets/sample_1.jpg",
+    "review": "Fast delivery and excellent customer service. The canvas tote is perfect for my daily needs. Will definitely shop again!"
+  },
+  {
+    "id": 3,
+    "name": "Anjali Singh",
+    "rating": 4,
+    "image": "assets/icons/person.svg",
+    "review": "The travel backpack is a game-changer! So many compartments and the quality is outstanding. Worth every penny!"
+  },
+  {
+    "id": 4,
+    "name": "Rahul Sharma",
+    "rating": 5,
+    "image": "assets/icons/person.svg",
+    "review": "Best purchase ever! The backpack is stylish, comfortable, and fits everything I need for college. Love it!"
+  },
+  {
+    "id": 5,
+    "name": "Priya Patel",
+    "rating": 5,
+    "image": "assets/icons/person.svg",
+    "review": "Exceeded my expectations! The build quality is fantastic and the design is so elegant. Perfect for work and travel."
+  },
+  {
+    "id": 6,
+    "name": "Arjun Mehta",
+    "rating": 4,
+    "image": "assets/icons/person.svg",
+    "review": "Great bag with lots of pockets. Very practical for daily use. The only minor thing is I wish it came in more colors."
+  },
+  {
+    "id": 7,
+    "name": "Sneha Reddy",
+    "rating": 5,
+    "image": "assets/icons/person.svg",
+    "review": "Absolutely love my ScoreBagz backpack! It's durable, spacious, and the free gift was such a nice surprise. Highly recommended!"
+  },
+  {
+    "id": 8,
+    "name": "Vikram Joshi",
+    "rating": 5,
+    "image": "assets/icons/person.svg",
+    "review": "Perfect for gym and office! Water-resistant material saved my laptop during the rains. Worth every rupee!"
+  },
+  {
+    "id": 9,
+    "name": "Kavita Desai",
+    "rating": 5,
+    "image": "assets/icons/person.svg",
+    "review": "Such a thoughtful brand! The bag quality is top-notch and knowing my purchase helps feed someone makes me so happy. Keep up the great work!"
+  },
+  {
+    "id": 10,
+    "name": "Aditya Kumar",
+    "rating": 4,
+    "image": "assets/icons/person.svg",
+    "review": "Really impressed with the quality and comfort. The straps are well-padded and it distributes weight evenly. Great for long commutes!"
+  }
+]

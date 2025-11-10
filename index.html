@@ -395,50 +395,61 @@
         <div class="max-w-6xl mx-auto px-4">
             <div class="relative flex justify-center items-center mb-16 fade-in h-20 md:h-32 overflow-hidden">
                 <img src="assets/brush_stroke.png" alt="" class="absolute inset-0 w-full h-full object-contain scale-brush-mobile md:scale-brush-desktop">
-                <h2 class="text-2xl md:text-4xl font-bold text-center text-white relative z-10">COSTUMER REVIEWS</h2>
+                <h2 class="text-2xl md:text-4xl font-bold text-center text-white relative z-10">CUSTOMER REVIEWS</h2>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="review-card scale-in stagger-delay-1 p-6 rounded-xl shadow-md">
-                    <div class="flex items-center mb-4">
-                        <img src="assets/sample_2.jpg" alt="Customer" class="w-12 h-12 rounded-full border-2 border-purple-200 mr-4">
-                        <div>
-                            <h4 class="font-bold text-black">Danish Sayyad</h4>
-                            <div class="flex text-yellow-400">
-                                ★★★★★
-                            </div>
-                        </div>
-                    </div>
-                    <p class="text-gray-600 italic">"Amazing quality bags! I've been using my leather bag for 2 months now and it still looks brand new. Highly recommend ScoreBagz!"</p>
-                </div>
+            <!-- Marquee Container with Fade Borders -->
+            <div class="relative overflow-hidden">
+                <!-- Left Fade -->
+                <div class="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
                 
-                <div class="review-card scale-in stagger-delay-2 p-6 rounded-xl shadow-md">
-                    <div class="flex items-center mb-4">
-                        <img src="assets/sample_1.jpg" alt="Customer" class="w-12 h-12 rounded-full border-2 border-purple-200 mr-4">
-                        <div>
-                            <h4 class="font-bold text-black">Abdul Mulla</h4>
-                            <div class="flex text-yellow-400">
-                                ★★★★★
-                            </div>
-                        </div>
-                    </div>
-                    <p class="text-gray-600 italic">"Fast delivery and excellent customer service. The canvas tote is perfect for my daily needs. Will definitely shop again!"</p>
-                </div>
+                <!-- Right Fade -->
+                <div class="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
                 
-                <div class="review-card scale-in stagger-delay-3 p-6 rounded-xl shadow-md">
-                    <div class="flex items-center mb-4">
-                        <img src="assets/icons/person.svg" alt="Customer" class="w-12 h-12 rounded-full border-2 border-purple-200 mr-4">
-                        <div>
-                            <h4 class="font-bold text-black">Anjali Singh</h4>
-                            <div class="flex text-yellow-400">
-                                ★★★★
-                            </div>
-                        </div>
-                    </div>
-                    <p class="text-gray-600 italic">"The travel backpack is a game-changer! So many compartments and the quality is outstanding. Worth every penny!"</p>
+                <!-- Scrolling Reviews Container -->
+                <div id="reviewsMarquee" class="flex gap-8 marquee-content">
+                    <!-- Reviews will be loaded here dynamically -->
                 </div>
             </div>
         </div>
+        
+        <style>
+            @keyframes marqueeScroll {
+                0% {
+                    transform: translateX(0);
+                }
+                100% {
+                    transform: translateX(-50%);
+                }
+            }
+            
+            .marquee-content {
+                animation: marqueeScroll 10s linear infinite;
+                animation-play-state: running;
+                will-change: transform;
+            }
+            
+            .marquee-content.paused {
+                animation-play-state: paused;
+            }
+            
+            .review-card {
+                min-width: 350px;
+                max-width: 350px;
+                width: 350px;
+                flex-shrink: 0;
+                background: white;
+                transition: transform 0.3s ease;
+            }
+            
+            @media (max-width: 768px) {
+                .review-card {
+                    min-width: 280px;
+                    max-width: 280px;
+                    width: 280px;
+                }
+            }
+        </style>
     </section>
 
     <!-- Donation Message Section -->
@@ -460,7 +471,7 @@
             </div>
             
             <!-- Arrow 1 (right side) -->
-            <img src="assets/arrow2.png" alt="" class="absolute w-16 md:w-24 lg:w-32 pointer-events-none" style="top: 65%; right: 15%; transform: translateY(-50%);">
+            <img src="assets/arrow2.png" alt="" class="absolute w-16 md:w-24 lg:w-32 pointer-events-none" style="top: 69%; right: 15%; transform: translateY(-50%);">
             
             <a href="pages/donation.html" 
                class="inline-block text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold hover:opacity-80 transition-colors" style="color: #9e3ac2;">
@@ -613,5 +624,88 @@
     </a>
 
     <script src="js/script.js"></script>
+    <script>
+        // Inline reviews loading (works even without server)
+        const reviewsData = [
+            {"id":1,"name":"Danish Sayyad","rating":5,"image":"assets/sample_2.jpg","review":"Amazing quality bags! I've been using my leather bag for 2 months now and it still looks brand new. Highly recommend ScoreBagz!"},
+            {"id":2,"name":"Abdul Mulla","rating":5,"image":"assets/sample_1.jpg","review":"Fast delivery and excellent customer service. The canvas tote is perfect for my daily needs. Will definitely shop again!"},
+            {"id":3,"name":"Anjali Singh","rating":4,"image":"assets/icons/person.svg","review":"The travel backpack is a game-changer! So many compartments and the quality is outstanding. Worth every penny!"},
+            {"id":4,"name":"Rahul Sharma","rating":5,"image":"assets/icons/person.svg","review":"Best purchase ever! The backpack is stylish, comfortable, and fits everything I need for college. Love it!"},
+            {"id":5,"name":"Priya Patel","rating":5,"image":"assets/icons/person.svg","review":"Exceeded my expectations! The build quality is fantastic and the design is so elegant. Perfect for work and travel."},
+            {"id":6,"name":"Arjun Mehta","rating":4,"image":"assets/icons/person.svg","review":"Great bag with lots of pockets. Very practical for daily use. The only minor thing is I wish it came in more colors."},
+            {"id":7,"name":"Sneha Reddy","rating":5,"image":"assets/icons/person.svg","review":"Absolutely love my ScoreBagz backpack! It's durable, spacious, and the free gift was such a nice surprise. Highly recommended!"},
+            {"id":8,"name":"Vikram Joshi","rating":5,"image":"assets/icons/person.svg","review":"Perfect for gym and office! Water-resistant material saved my laptop during the rains. Worth every rupee!"},
+            {"id":9,"name":"Kavita Desai","rating":5,"image":"assets/icons/person.svg","review":"Such a thoughtful brand! The bag quality is top-notch and knowing my purchase helps feed someone makes me so happy. Keep up the great work!"},
+            {"id":10,"name":"Aditya Kumar","rating":4,"image":"assets/icons/person.svg","review":"Really impressed with the quality and comfort. The straps are well-padded and it distributes weight evenly. Great for long commutes!"}
+        ];
+
+        function getStars(rating) {
+            return '★'.repeat(rating) + '☆'.repeat(5 - rating);
+        }
+
+        function createReviewCard(review) {
+            return `
+                <div class="review-card p-6 rounded-xl shadow-md">
+                    <div class="flex items-center mb-4">
+                        <img src="${review.image}" alt="${review.name}" class="w-12 h-12 rounded-full border-2 border-purple-200 mr-4" onerror="this.src='assets/icons/person.svg'">
+                        <div>
+                            <h4 class="font-bold text-black">${review.name}</h4>
+                            <div class="flex text-yellow-400">
+                                ${getStars(review.rating)}
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"${review.review}"</p>
+                </div>
+            `;
+        }
+
+        function initReviews() {
+            const marqueeContainer = document.getElementById('reviewsMarquee');
+            if (!marqueeContainer) {
+                console.error('Reviews container not found');
+                return;
+            }
+
+            // Create reviews HTML - duplicate for seamless loop
+            const reviewsHTML = reviewsData.map(createReviewCard).join('');
+            marqueeContainer.innerHTML = reviewsHTML + reviewsHTML;
+
+            // Pause/resume logic
+            let pauseTimeout;
+            const isMobile = window.innerWidth < 768;
+
+            if (isMobile) {
+                marqueeContainer.addEventListener('click', function() {
+                    this.classList.add('paused');
+                    clearTimeout(pauseTimeout);
+                    pauseTimeout = setTimeout(() => {
+                        this.classList.remove('paused');
+                    }, 3000);
+                });
+            } else {
+                marqueeContainer.addEventListener('mouseenter', function() {
+                    this.classList.add('paused');
+                    clearTimeout(pauseTimeout);
+                });
+                
+                marqueeContainer.addEventListener('mouseleave', function() {
+                    clearTimeout(pauseTimeout);
+                    pauseTimeout = setTimeout(() => {
+                        this.classList.remove('paused');
+                    }, 3000);
+                });
+            }
+
+            console.log('Reviews loaded successfully!');
+        }
+
+        // Initialize reviews when DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initReviews);
+        } else {
+            initReviews();
+        }
+    </script>
 </body>
 </html>

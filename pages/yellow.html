@@ -201,23 +201,60 @@
             </section>
 
             <section class="bg-white rounded-2xl p-8 shadow-lg">
-                <h2 class="text-3xl font-bold text-gray-900 mb-8">Customer Reviews</h2>
-                <div class="space-y-6">
-                    <div class="border-b border-gray-200 pb-6">
-                        <div class="flex items-start mb-3">
-                            <img src="../assets/sample_1.jpg" alt="Customer" class="w-12 h-12 rounded-full border-2 border-purple-200 mr-4">
-                            <div class="flex-1">
-                                <div class="flex items-center justify-between mb-2">
-                                    <h4 class="font-bold text-gray-900">Meera Kapoor</h4>
-                                    <span class="text-sm text-gray-500">1 week ago</span>
-                                </div>
-                                <div class="flex text-yellow-400 mb-2">★★★★★</div>
-                                <p class="text-gray-600">Love this tote! It's so spacious and sturdy. Perfect for grocery shopping and carries a lot of weight without any issues.</p>
-                            </div>
-                        </div>
+                <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Customer Reviews</h2>
+                
+                <!-- Marquee Container with Fade Borders -->
+                <div class="relative overflow-hidden">
+                    <!-- Left Fade -->
+                    <div class="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
+                    
+                    <!-- Right Fade -->
+                    <div class="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
+                    
+                    <!-- Scrolling Reviews Container -->
+                    <div id="reviewsMarquee" class="flex gap-8 marquee-content">
+                        <!-- Reviews will be loaded here dynamically -->
                     </div>
                 </div>
             </section>
+            
+            <style>
+                @keyframes marqueeScroll {
+                    0% {
+                        transform: translateX(0);
+                    }
+                    100% {
+                        transform: translateX(-50%);
+                    }
+                }
+                
+                .marquee-content {
+                    animation: marqueeScroll 10s linear infinite;
+                    animation-play-state: running;
+                    will-change: transform;
+                }
+                
+                .marquee-content.paused {
+                    animation-play-state: paused;
+                }
+                
+                .review-card {
+                    min-width: 350px;
+                    max-width: 350px;
+                    width: 350px;
+                    flex-shrink: 0;
+                    background: white;
+                    transition: transform 0.3s ease;
+                }
+                
+                @media (max-width: 768px) {
+                    .review-card {
+                        min-width: 280px;
+                        max-width: 280px;
+                        width: 280px;
+                    }
+                }
+            </style>
         </div>
     </div>
 
@@ -333,5 +370,8 @@
     </footer>
 
     <script src="../js/script.js"></script>
+    <script>
+        const reviewsData=[{"id":1,"name":"Danish Sayyad","rating":5,"image":"../assets/sample_2.jpg","review":"Amazing quality bags! I've been using my leather bag for 2 months now and it still looks brand new. Highly recommend ScoreBagz!"},{"id":2,"name":"Abdul Mulla","rating":5,"image":"../assets/sample_1.jpg","review":"Fast delivery and excellent customer service. The canvas tote is perfect for my daily needs. Will definitely shop again!"},{"id":3,"name":"Anjali Singh","rating":4,"image":"../assets/icons/person.svg","review":"The travel backpack is a game-changer! So many compartments and the quality is outstanding. Worth every penny!"},{"id":4,"name":"Rahul Sharma","rating":5,"image":"../assets/icons/person.svg","review":"Best purchase ever! The backpack is stylish, comfortable, and fits everything I need for college. Love it!"},{"id":5,"name":"Priya Patel","rating":5,"image":"../assets/icons/person.svg","review":"Exceeded my expectations! The build quality is fantastic and the design is so elegant. Perfect for work and travel."},{"id":6,"name":"Arjun Mehta","rating":4,"image":"../assets/icons/person.svg","review":"Great bag with lots of pockets. Very practical for daily use. The only minor thing is I wish it came in more colors."},{"id":7,"name":"Sneha Reddy","rating":5,"image":"../assets/icons/person.svg","review":"Absolutely love my ScoreBagz backpack! It's durable, spacious, and the free gift was such a nice surprise. Highly recommended!"},{"id":8,"name":"Vikram Joshi","rating":5,"image":"../assets/icons/person.svg","review":"Perfect for gym and office! Water-resistant material saved my laptop during the rains. Worth every rupee!"},{"id":9,"name":"Kavita Desai","rating":5,"image":"../assets/icons/person.svg","review":"Such a thoughtful brand! The bag quality is top-notch and knowing my purchase helps feed someone makes me so happy. Keep up the great work!"},{"id":10,"name":"Aditya Kumar","rating":4,"image":"../assets/icons/person.svg","review":"Really impressed with the quality and comfort. The straps are well-padded and it distributes weight evenly. Great for long commutes!"}];function getStars(r){return'★'.repeat(r)+'☆'.repeat(5-r)}function createReviewCard(r){return`<div class="review-card p-6 rounded-xl shadow-md"><div class="flex items-center mb-4"><img src="${r.image}" alt="${r.name}" class="w-12 h-12 rounded-full border-2 border-purple-200 mr-4" onerror="this.src='../assets/icons/person.svg'"><div><h4 class="font-bold text-black">${r.name}</h4><div class="flex text-yellow-400">${getStars(r.rating)}</div></div></div><p class="text-gray-600 italic">"${r.review}"</p></div>`}function initReviews(){const c=document.getElementById('reviewsMarquee');if(!c)return;c.innerHTML=reviewsData.map(createReviewCard).join('')+reviewsData.map(createReviewCard).join('');let t,m=window.innerWidth<768;if(m){c.addEventListener('click',function(){this.classList.add('paused');clearTimeout(t);t=setTimeout(()=>this.classList.remove('paused'),3000)})}else{c.addEventListener('mouseenter',function(){this.classList.add('paused');clearTimeout(t)});c.addEventListener('mouseleave',function(){clearTimeout(t);t=setTimeout(()=>this.classList.remove('paused'),3000)})}}document.readyState==='loading'?document.addEventListener('DOMContentLoaded',initReviews):initReviews();
+    </script>
 </body>
 </html>

@@ -398,8 +398,8 @@
                 <h2 class="text-2xl md:text-4xl font-bold text-center text-white relative z-10">CUSTOMER REVIEWS</h2>
             </div>
             
-            <!-- Marquee Container with Fade Borders -->
-            <div class="relative overflow-hidden">
+            <!-- Desktop: Marquee Container with Fade Borders -->
+            <div class="hidden md:block relative overflow-hidden">
                 <!-- Left Fade -->
                 <div class="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
                 
@@ -411,6 +411,14 @@
                     <!-- Reviews will be loaded here dynamically -->
                 </div>
             </div>
+
+            <!-- Mobile: Horizontal Scroll -->
+            <div class="md:hidden overflow-x-auto pb-4 hide-scrollbar-mobile">
+                <div id="reviewsMarqueeMobile" class="flex gap-4">
+                    <!-- Reviews will be loaded here dynamically -->
+                </div>
+            </div>
+            <p class="md:hidden text-center text-gray-500 text-sm mt-2">Swipe →</p>
         </div>
         
         <style>
@@ -448,6 +456,14 @@
                     max-width: 280px;
                     width: 280px;
                 }
+            }
+
+            .hide-scrollbar-mobile::-webkit-scrollbar {
+                display: none;
+            }
+            .hide-scrollbar-mobile {
+                -ms-overflow-style: none;
+                scrollbar-width: none;
             }
         </style>
     </section>
@@ -662,28 +678,22 @@
 
         function initReviews() {
             const marqueeContainer = document.getElementById('reviewsMarquee');
-            if (!marqueeContainer) {
+            const mobileContainer = document.getElementById('reviewsMarqueeMobile');
+            
+            if (!marqueeContainer && !mobileContainer) {
                 console.error('Reviews container not found');
                 return;
             }
 
-            // Create reviews HTML - duplicate for seamless loop
+            // Create reviews HTML
             const reviewsHTML = reviewsData.map(createReviewCard).join('');
-            marqueeContainer.innerHTML = reviewsHTML + reviewsHTML;
-
-            // Pause/resume logic
-            let pauseTimeout;
-            const isMobile = window.innerWidth < 768;
-
-            if (isMobile) {
-                marqueeContainer.addEventListener('click', function() {
-                    this.classList.add('paused');
-                    clearTimeout(pauseTimeout);
-                    pauseTimeout = setTimeout(() => {
-                        this.classList.remove('paused');
-                    }, 3000);
-                });
-            } else {
+            
+            // Desktop: duplicate for seamless loop
+            if (marqueeContainer) {
+                marqueeContainer.innerHTML = reviewsHTML + reviewsHTML;
+                
+                // Pause/resume logic for desktop
+                let pauseTimeout;
                 marqueeContainer.addEventListener('mouseenter', function() {
                     this.classList.add('paused');
                     clearTimeout(pauseTimeout);
@@ -695,6 +705,11 @@
                         this.classList.remove('paused');
                     }, 3000);
                 });
+            }
+
+            // Mobile: single set, no duplication
+            if (mobileContainer) {
+                mobileContainer.innerHTML = reviewsHTML;
             }
 
             console.log('Reviews loaded successfully!');

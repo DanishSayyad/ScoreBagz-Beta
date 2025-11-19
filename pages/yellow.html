@@ -413,9 +413,34 @@
                 });
             }
 
-            // Mobile: single set, no duplication
+            // Mobile: duplicate for seamless infinite scroll
             if (mobileContainer) {
-                mobileContainer.innerHTML = reviewsHTML;
+                mobileContainer.innerHTML = reviewsHTML + reviewsHTML + reviewsHTML;
+                
+                // Infinite scroll logic
+                let isScrolling = false;
+                mobileContainer.parentElement.addEventListener('scroll', function() {
+                    if (isScrolling) return;
+                    
+                    const scrollLeft = this.scrollLeft;
+                    const scrollWidth = mobileContainer.scrollWidth / 3; // Each set is 1/3 of total
+                    
+                    // If scrolled past 2/3, reset to 1/3
+                    if (scrollLeft >= scrollWidth * 2) {
+                        isScrolling = true;
+                        this.scrollLeft = scrollLeft - scrollWidth;
+                        setTimeout(() => isScrolling = false, 50);
+                    }
+                    // If scrolled before 1/3, jump to 2/3
+                    else if (scrollLeft <= 0) {
+                        isScrolling = true;
+                        this.scrollLeft = scrollWidth;
+                        setTimeout(() => isScrolling = false, 50);
+                    }
+                });
+                
+                // Start in the middle set
+                mobileContainer.parentElement.scrollLeft = mobileContainer.scrollWidth / 3;
             }
         }document.readyState==='loading'?document.addEventListener('DOMContentLoaded',initReviews):initReviews();
     </script>

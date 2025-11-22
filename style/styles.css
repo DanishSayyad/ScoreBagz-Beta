@@ -233,3 +233,34 @@
     --glow-rgb: 168, 85, 247;
     border-color: #a855f7;
 }
+
+/* effect-shine */
+.effect-shine {
+  -webkit-mask-image: linear-gradient(-75deg, #e9d5ff 30%, rgba(158, 58, 194, 0.6) 50%, #e9d5ff 70%);
+  mask-image: linear-gradient(-75deg, #e9d5ff 30%, rgba(158, 58, 194, 0.6) 50%, #e9d5ff 70%);
+  -webkit-mask-size: 200%;
+  mask-size: 200%;
+  animation: shine 2s infinite;
+}
+
+@-webkit-keyframes shine {
+  from {
+    -webkit-mask-position: 150%;
+  }
+  
+  to {
+    -webkit-mask-position: -50%;
+  }
+}
+
+@keyframes shine {
+  from {
+    -webkit-mask-position: 150%;
+    mask-position: 150%;
+  }
+  
+  to {
+    -webkit-mask-position: -50%;
+    mask-position: -50%;
+  }
+}

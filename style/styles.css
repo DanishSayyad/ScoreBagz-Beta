@@ -234,6 +234,28 @@
     border-color: #a855f7;
 }
 
+/* Background overlay for purple cards with 50% opacity */
+.bg-overlay::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('../assets/card-bg.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.5;
+    border-radius: 1rem;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.bg-overlay > * {
+    position: relative;
+    z-index: 1;
+}
+
 /* effect-shine */
 .effect-shine {
   -webkit-mask-image: linear-gradient(-75deg, #e9d5ff 30%, rgba(158, 58, 194, 0.6) 50%, #e9d5ff 70%);

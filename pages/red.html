@@ -3,53 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premium Leather Bag - ScoreBagz</title>
+    <title>Travel Backpack - ScoreBagz</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style/styles.css">
 </head>
-<body class="bg-purple-50 overflow-x-hidden">
+<body class="bg-gray-100 min-h-screen w-full font-sans overflow-x-hidden">
     <!-- Navbar -->
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-black shadow-md">
+    <nav class="bg-black shadow-lg">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-center items-center h-20 lg:h-24 relative">
-                <!-- Menu Button - Always on the left -->
-                <div class="flex items-center absolute left-0">
-                    <button id="menu-toggle" class="flex flex-col justify-center items-center w-10 h-10 space-y-1.5 text-white hover:text-purple-400 transition-colors">
-                        <span class="block w-6 h-0.5 bg-current"></span>
-                        <span class="block w-6 h-0.5 bg-current"></span>
-                        <span class="block w-6 h-0.5 bg-current"></span>
+            <div class="flex items-center justify-between h-16">
+                <!-- Left side: Menu Button -->
+                <div class="flex-shrink-0">
+                    <button id="menu-toggle" class="text-gray-300 hover:bg-gray-700 hover:text-white p-2 rounded-md" aria-label="Open menu">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
                     </button>
                 </div>
-                
-                <!-- Logo - Always centered -->
-                <div class="flex justify-center items-center h-full">
+
+                <!-- Center: Logo -->
+                <div class="flex-grow text-center">
                     <a href="../index.html">
-                        <img src="../assets/logo/logo.png" alt="ScoreBagz Logo" class="h-16 lg:h-20">
+                        <img src="../assets/logo/logo.png" alt="ScoreBagz Logo" class="h-12 inline-block">
                     </a>
                 </div>
-                
-                <!-- Cart and Login - Always on the right -->
-                <div class="flex items-center space-x-4 absolute right-0">
-                    <!-- Cart Button -->
-                    <button class="flex items-center space-x-2 text-white hover:text-purple-400 transition-colors">
-                        <div class="w-6 h-6">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-full h-full">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                            </svg>
-                        </div>
-                        <span class="hidden lg:inline font-medium">Cart</span>
+
+                <!-- Right side: Actions -->
+                <div class="flex items-center space-x-2 sm:space-x-4">
+                    <button class="flex items-center text-gray-300 hover:bg-gray-700 hover:text-white px-2 sm:px-3 py-2 rounded-md text-sm font-medium">
+                        <svg class="h-5 w-5 sm:mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                        </svg>
+                        <span class="hidden sm:inline">Cart</span>
                     </button>
-                    
-                    <!-- Login Button -->
-                    <button class="flex items-center space-x-2 px-4 py-2 rounded-lg bg-gradient-to-r from-orange-500 to-red-600 text-white hover:from-orange-600 hover:to-red-700 transition-all shadow-md">
-                        <div class="w-5 h-5">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-full h-full">
-                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                                <circle cx="12" cy="7" r="4"></circle>
-                            </svg>
-                        </div>
-                        <span class="font-medium hidden md:inline">Sign In</span>
+                    <button class="bg-purple-600 text-white hover:bg-purple-700 px-3 sm:px-4 py-2 rounded-md text-sm font-medium transition-colors">
+                        Login
                     </button>
                 </div>
             </div>
@@ -57,476 +46,775 @@
     </nav>
 
     <!-- Side Menu -->
-    <div id="side-menu" class="fixed top-0 left-0 h-full w-64 bg-gray-900 text-white transform -translate-x-full transition-transform duration-300 ease-in-out z-40 shadow-2xl">
+    <div id="side-menu" class="fixed top-0 left-0 h-full w-64 bg-gray-900 text-white transform -translate-x-full transition-transform duration-300 ease-in-out z-50 shadow-2xl">
         <div class="p-6">
             <h2 class="text-2xl font-bold mb-8">Menu</h2>
-            <!-- Menu content will be added here -->
             <p class="text-gray-400 italic">Coming soon...</p>
         </div>
     </div>
 
     <!-- Overlay for side menu -->
-    <div id="menu-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-30 hidden"></div>
+    <div id="menu-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
 
-    <div id="banner-container" class="pb-16 mt-4">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- Product Header -->
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
-                <!-- Product Info - Left Side -->
-                <div class="bg-white rounded-2xl p-8 order-2 lg:order-1">
-                    <div class="mb-4">
-                        <span class="inline-block bg-purple-100 text-purple-600 text-xs font-semibold px-3 py-1 rounded-full badge-glow badge-glow-purple">New Arrival</span>
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto p-4 pb-32 lg:p-8 lg:pb-8">
+        <div class="lg:grid lg:grid-cols-10 lg:gap-8">
+            <!-- Left Column (Scrollable Content) -->
+            <div class="lg:col-span-7 space-y-8">
+                
+                <!-- Product Details Section -->
+                <section class="relative bg-white rounded-2xl shadow-lg overflow-hidden">
+                    <div class="absolute top-0 left-0 bg-red-500 text-white text-sm font-bold px-4 py-2 rounded-br-2xl animate-pulse z-10">
+                        NEW LAUNCH!
                     </div>
                     
-                    <h1 class="text-4xl font-bold text-gray-900 mb-4">Premium Leather Bag</h1>
-                    
-                    <div class="flex items-center mb-6">
-                        <div class="flex text-yellow-400 text-xl">
-                            ★★★★★
+                    <!-- Big Image -->
+                    <img src="../assets/images/p1.jpg" alt="The Ultimate Travel Backpack" class="w-full h-auto object-cover">
+
+                    <div class="p-8">
+                        <!-- Ratings & Shipping -->
+                        <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 mb-6 text-center">
+                            <div class="flex items-center">
+                                <div class="flex text-yellow-400 text-xl">
+                                    ★★★★★
+                                </div>
+                                <span class="ml-2 text-sm font-semibold text-gray-700">4.9/5 (1,234 reviews)</span>
+                            </div>
+                            <div class="flex items-center text-sm font-semibold text-green-700">
+                                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0"></path>
+                                </svg>
+                                <span>Free Shipping <span class="text-red-500 font-bold animate-pulse">(Limited Time Offer)</span></span>
+                            </div>
                         </div>
-                        <span class="ml-2 text-gray-600">(4.8 rating • 156 reviews)</span>
-                    </div>
 
-                    <div class="mb-6">
-                        <span class="text-4xl font-bold text-purple-600">₹2,499</span>
-                        <span class="text-2xl text-gray-400 line-through ml-3">₹3,999</span>
-                        <span class="ml-3 text-green-600 font-semibold">38% OFF</span>
-                    </div>
+                        <!-- Titles -->
+                        <h1 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-2 text-center">
+                            The Multi-Purpose Travel Backpack
+                        </h1>
+                        <p class="text-lg text-gray-600 text-center mb-8">
+                            For Students, Travellers, and Working Professionals
+                        </p>
 
-                    <p class="text-gray-600 text-lg mb-8 leading-relaxed">
-                        Experience luxury with our Premium Leather Bag. Handcrafted with genuine leather, 
-                        this bag combines timeless elegance with modern functionality. Perfect for everyday 
-                        use, business meetings, or special occasions.
+                        <!-- Mobile Buying Controls -->
+                        <div class="lg:hidden border-t border-gray-100 pt-6">
+                            <!-- Stock Urgency -->
+                            <div class="text-center text-red-600 font-bold mb-4 animate-pulse">
+                                Selling fast! Only 4 left today
+                            </div>
+
+                            <!-- Quantity & Social Proof -->
+                            <div class="flex flex-col items-center gap-4 mb-6">
+                                <div class="flex items-center border border-gray-300 rounded-lg">
+                                    <button onclick="decreaseQuantity()" class="px-4 py-2 text-gray-600 hover:bg-gray-100">−</button>
+                                    <span id="mobile-quantity" class="px-6 py-2 font-semibold">1</span>
+                                    <button onclick="increaseQuantity()" class="px-4 py-2 text-gray-600 hover:bg-gray-100">+</button>
+                                </div>
+                                <div class="flex items-center text-green-700 text-sm font-medium">
+                                    <svg class="w-10 h-10 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                                    </svg>
+                                    <span>On each purchase we give food to those in need.</span>
+                                </div>
+                            </div>
+
+                            <!-- Secure Payment -->
+                            <div class="flex items-center justify-center text-gray-500 text-sm">
+                                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                                </svg>
+                                <span>100% Secure Payment</span>
+                            </div>
+                        </div>
+
+                        <!-- What You'll Get -->
+                        <div class="mt-12">
+                            <h3 class="text-xl font-bold text-gray-800 mb-4 text-center">What You'll Get In This Backpack</h3>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Highlight Review Section -->
+                <section class="bg-blue-50 border border-blue-100 rounded-2xl p-6 shadow-sm relative overflow-hidden">
+                    <style>
+                        @keyframes shine-move {
+                            0% { left: -100%; opacity: 0; }
+                            50% { opacity: 0.5; }
+                            100% { left: 200%; opacity: 0; }
+                        }
+                        .shine-effect {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 50%;
+                            height: 100%;
+                            background: linear-gradient(to right, transparent, rgba(255,255,255,0.8), transparent);
+                            transform: skewX(-20deg);
+                            animation: shine-move 2.5s infinite;
+                        }
+                    </style>
+                    <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-4">
+                        <div class="relative overflow-hidden bg-blue-600 text-white px-4 py-1.5 rounded-full font-bold text-xs uppercase tracking-wider shadow-sm flex-shrink-0">
+                            <span class="relative z-10">Satisfied Customer</span>
+                            <div class="shine-effect"></div>
+                        </div>
+                        
+                        <div class="flex items-center gap-3">
+                            <img src="../assets/sample_1.jpg" alt="Customer" class="w-10 h-10 rounded-full border-2 border-white shadow-sm" onerror="this.src='../assets/icons/person.svg'">
+                            <div class="flex flex-col">
+                                <span class="font-bold text-gray-900 text-sm leading-tight">Anjali K.</span>
+                                <div class="flex text-yellow-400">
+                                    ★★★★★
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <p class="text-gray-800 text-lg font-medium leading-relaxed italic">
+                        "Really light weight, super spacious for my all stuff. Easily fit my laptop and comes with rain cover. I highly recommend you to buy it now!"
                     </p>
+                </section>
 
-                    <!-- Features -->
-                    <div class="mb-8">
-                        <h3 class="text-xl font-bold text-gray-900 mb-4">Key Features:</h3>
-                        <ul class="space-y-2">
-                            <li class="flex items-start">
-                                <svg class="w-6 h-6 text-purple-600 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                                </svg>
-                                <span class="text-gray-700">100% Genuine Leather</span>
-                            </li>
-                            <li class="flex items-start">
-                                <svg class="w-6 h-6 text-purple-600 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                                </svg>
-                                <span class="text-gray-700">Multiple Compartments for Organization</span>
-                            </li>
-                            <li class="flex items-start">
-                                <svg class="w-6 h-6 text-purple-600 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                                </svg>
-                                <span class="text-gray-700">Adjustable Shoulder Strap</span>
-                            </li>
-                            <li class="flex items-start">
-                                <svg class="w-6 h-6 text-purple-600 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                                </svg>
-                                <span class="text-gray-700">Water-Resistant Coating</span>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <!-- Add to Cart Button -->
-                    <button class="w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-4 px-8 rounded-xl text-lg transition-all transform hover:scale-105 shadow-lg mb-4">
-                        Add to Cart
-                    </button>
+                <!-- Features Section -->
+                <section class="py-12">
+                    <h2 class="text-center text-3xl font-extrabold text-gray-900 mb-12 px-4">
+                        Features That Matter
+                    </h2>
                     
-                    <button class="w-full border-2 border-purple-600 text-purple-600 hover:bg-purple-50 font-bold py-4 px-8 rounded-xl text-lg transition-all">
-                        Buy Now
-                    </button>
-                </div>
-
-                <!-- Product Images - Right Side -->
-                <div class="space-y-4 order-1 lg:order-2">
-                    <div class="bg-white rounded-2xl overflow-hidden shadow-lg flex items-center justify-center p-4">
-                        <img src="../assets/images/p1.jpg" alt="Premium Leather Bag" class="w-full h-96 object-contain">
+                    <!-- Mobile: Horizontal Scroller -->
+                    <div class="md:hidden" id="mobile-features-scroll-container">
+                        <div class="sticky top-0 h-screen w-full overflow-hidden">
+                            <div id="mobile-features-track" class="flex h-full items-center">
+                                <!-- Feature 1 -->
+                                <div class="w-screen h-full flex flex-col items-center justify-center p-4 box-border">
+                                    <div class="bg-white rounded-2xl shadow-xl p-6 max-w-sm w-full transform transition-transform duration-500">
+                                        <img src="../assets/images/p1.jpg" alt="Laptop Compartment" class="w-full h-48 object-contain rounded-lg mb-4">
+                                        <div class="text-center">
+                                            <span class="block text-purple-600 text-xs font-bold tracking-wider uppercase mb-1">Laptop Compartment</span>
+                                            <h3 class="text-xl font-bold text-gray-800 mb-2">Does this backpack protect my laptop?</h3>
+                                            <p class="text-gray-600">Yes, it keeps your laptop safe and secure, no matter where your day takes you.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Feature 2 -->
+                                <div class="w-screen h-full flex flex-col items-center justify-center p-4 box-border">
+                                    <div class="bg-white rounded-2xl shadow-xl p-6 max-w-sm w-full transform transition-transform duration-500">
+                                        <img src="../assets/images/p1.jpg" alt="Three Main Compartments" class="w-full h-48 object-contain rounded-lg mb-4">
+                                        <div class="text-center">
+                                            <span class="block text-purple-600 text-xs font-bold tracking-wider uppercase mb-1">Three Main Compartments</span>
+                                            <h3 class="text-xl font-bold text-gray-800 mb-2">Is the backpack spacious enough to keep things organised?</h3>
+                                            <p class="text-gray-600">Yes, it helps you stay perfectly organised so you can move through your day with ease.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Feature 3 -->
+                                <div class="w-screen h-full flex flex-col items-center justify-center p-4 box-border">
+                                    <div class="bg-white rounded-2xl shadow-xl p-6 max-w-sm w-full transform transition-transform duration-500">
+                                        <img src="../assets/images/p1.jpg" alt="Front Pocket" class="w-full h-48 object-contain rounded-lg mb-4">
+                                        <div class="text-center">
+                                            <span class="block text-purple-600 text-xs font-bold tracking-wider uppercase mb-1">Front Pocket</span>
+                                            <h3 class="text-xl font-bold text-gray-800 mb-2">Can I access essentials quickly without opening the whole bag?</h3>
+                                            <p class="text-gray-600">Yes, everything you need stays right at your fingertips when you're in a hurry.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Feature 4 -->
+                                <div class="w-screen h-full flex flex-col items-center justify-center p-4 box-border">
+                                    <div class="bg-white rounded-2xl shadow-xl p-6 max-w-sm w-full transform transition-transform duration-500">
+                                        <img src="../assets/images/p1.jpg" alt="Premium Material" class="w-full h-48 object-contain rounded-lg mb-4">
+                                        <div class="text-center">
+                                            <span class="block text-purple-600 text-xs font-bold tracking-wider uppercase mb-1">Premium Material</span>
+                                            <h3 class="text-xl font-bold text-gray-800 mb-2">Is the material strong enough for daily use?</h3>
+                                            <p class="text-gray-600">Yes, it's built to stay strong through classes, commutes, and travels without giving up on you.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Feature 5 -->
+                                <div class="w-screen h-full flex flex-col items-center justify-center p-4 box-border">
+                                    <div class="bg-white rounded-2xl shadow-xl p-6 max-w-sm w-full transform transition-transform duration-500">
+                                        <img src="../assets/images/p1.jpg" alt="Water Resistant + Free Rain Cover" class="w-full h-48 object-contain rounded-lg mb-4">
+                                        <div class="text-center">
+                                            <span class="block text-purple-600 text-xs font-bold tracking-wider uppercase mb-1">Water Resistant + Free Rain Cover</span>
+                                            <h3 class="text-xl font-bold text-gray-800 mb-2">Will my belongings stay dry if it rains?</h3>
+                                            <p class="text-gray-600">Yes, and it keeps everything completely shielded from rain.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="grid grid-cols-3 gap-4">
-                        <div class="bg-white rounded-lg overflow-hidden shadow flex items-center justify-center p-2">
-                            <img src="../assets/images/p1.jpg" alt="View 1" class="w-full h-24 object-contain cursor-pointer hover:opacity-75 transition">
+
+                    <!-- Desktop: Vertical Alternating Layout -->
+                    <div class="hidden md:block space-y-24 md:space-y-32">
+                        <!-- Feature 1 -->
+                        <div class="flex flex-col md:flex-row gap-8 items-center">
+                            <div class="md:w-1/2">
+                                <img src="../assets/images/p1.jpg" alt="Laptop Compartment" class="w-full rounded-2xl shadow-lg">
+                            </div>
+                            <div class="md:w-1/2 space-y-4">
+                                <h3 class="text-2xl font-bold text-gray-900">Laptop Compartment</h3>
+                                <p class="text-xl font-semibold text-purple-600">Does this backpack protect my laptop?</p>
+                                <p class="text-gray-700 text-lg">Yes, it keeps your laptop safe and secure, no matter where your day takes you.</p>
+                            </div>
                         </div>
-                        <div class="bg-white rounded-lg overflow-hidden shadow flex items-center justify-center p-2">
-                            <img src="../assets/images/p1.jpg" alt="View 2" class="w-full h-24 object-contain cursor-pointer hover:opacity-75 transition">
+
+                        <!-- Feature 2 -->
+                        <div class="flex flex-col md:flex-row-reverse gap-8 items-center">
+                            <div class="md:w-1/2">
+                                <img src="../assets/images/p1.jpg" alt="Three Main Compartments" class="w-full rounded-2xl shadow-lg">
+                            </div>
+                            <div class="md:w-1/2 space-y-4">
+                                <h3 class="text-2xl font-bold text-gray-900">Three Main Compartments</h3>
+                                <p class="text-xl font-semibold text-purple-600">Is the backpack spacious enough to keep things organised?</p>
+                                <p class="text-gray-700 text-lg">Yes, it helps you stay perfectly organised so you can move through your day with ease.</p>
+                            </div>
                         </div>
-                        <div class="bg-white rounded-lg overflow-hidden shadow flex items-center justify-center p-2">
-                            <img src="../assets/images/p1.jpg" alt="View 3" class="w-full h-24 object-contain cursor-pointer hover:opacity-75 transition">
+
+                        <!-- Feature 3 -->
+                        <div class="flex flex-col md:flex-row gap-8 items-center">
+                            <div class="md:w-1/2">
+                                <img src="../assets/images/p1.jpg" alt="Front Pocket" class="w-full rounded-2xl shadow-lg">
+                            </div>
+                            <div class="md:w-1/2 space-y-4">
+                                <h3 class="text-2xl font-bold text-gray-900">Front Pocket</h3>
+                                <p class="text-xl font-semibold text-purple-600">Can I access essentials quickly without opening the whole bag?</p>
+                                <p class="text-gray-700 text-lg">Yes, everything you need stays right at your fingertips when you're in a hurry.</p>
+                            </div>
+                        </div>
+
+                        <!-- Feature 4 -->
+                        <div class="flex flex-col md:flex-row-reverse gap-8 items-center">
+                            <div class="md:w-1/2">
+                                <img src="../assets/images/p1.jpg" alt="Material" class="w-full rounded-2xl shadow-lg">
+                            </div>
+                            <div class="md:w-1/2 space-y-4">
+                                <h3 class="text-2xl font-bold text-gray-900">Premium Material</h3>
+                                <p class="text-xl font-semibold text-purple-600">Is the material strong enough for daily use?</p>
+                                <p class="text-gray-700 text-lg">Yes, it's built to stay strong through classes, commutes, and travels without giving up on you.</p>
+                            </div>
+                        </div>
+
+                        <!-- Feature 5 -->
+                        <div class="flex flex-col md:flex-row gap-8 items-center">
+                            <div class="md:w-1/2">
+                                <img src="../assets/images/p1.jpg" alt="Water Resistant" class="w-full rounded-2xl shadow-lg">
+                            </div>
+                            <div class="md:w-1/2 space-y-4">
+                                <h3 class="text-2xl font-bold text-gray-900">Water Resistant + Free Rain Cover</h3>
+                                <p class="text-xl font-semibold text-purple-600">Will my belongings stay dry if it rains?</p>
+                                <p class="text-gray-700 text-lg">Yes, and it keeps everything completely shielded from rain.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Comparison Section -->
+                <section class="bg-white rounded-2xl shadow-lg overflow-hidden">
+                    <div class="p-8">
+                        <h2 class="text-2xl font-bold text-gray-800 text-center mb-6">
+                            Why Score Bagz?
+                        </h2>
+                        <div class="grid grid-cols-2 gap-px bg-gray-200 rounded-lg overflow-hidden border border-gray-200">
+                            <!-- Highlighted Left Side -->
+                            <div class="bg-emerald-50 p-6">
+                                <h3 class="text-lg font-bold text-emerald-800 mb-4">Score Bagz Backpack</h3>
+                                <ul class="space-y-3">
+                                    <li class="flex items-start text-gray-700">
+                                        <svg class="w-5 h-5 mr-2 text-emerald-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                        </svg>
+                                        <span>100% Nylon Material</span>
+                                    </li>
+                                    <li class="flex items-start text-gray-700">
+                                        <svg class="w-5 h-5 mr-2 text-emerald-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                        </svg>
+                                        <span>Lightweight & Durable</span>
+                                    </li>
+                                    <li class="flex items-start text-gray-700">
+                                        <svg class="w-5 h-5 mr-2 text-emerald-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                        </svg>
+                                        <span>2-Year Warranty</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- Right Side -->
+                            <div class="bg-rose-50 p-6">
+                                <h3 class="text-lg font-bold text-gray-500 mb-4">Ordinary Backpack</h3>
+                                <ul class="space-y-3">
+                                    <li class="flex items-start text-gray-500">
+                                        <svg class="w-5 h-5 mr-2 text-red-500 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                                        </svg>
+                                        <span>Basic Material</span>
+                                    </li>
+                                    <li class="flex items-start text-gray-500">
+                                        <svg class="w-5 h-5 mr-2 text-red-500 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                                        </svg>
+                                        <span>Heavyweight</span>
+                                    </li>
+                                    <li class="flex items-start text-gray-500">
+                                        <svg class="w-5 h-5 mr-2 text-red-500 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                                        </svg>
+                                        <span>No Warranty</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Special Offer Section -->
+                <section class="bg-gradient-to-r from-purple-700 to-indigo-800 rounded-2xl shadow-2xl overflow-hidden p-8 text-center text-white relative">
+                    <div class="relative z-10">
+                        <p class="text-lg md:text-xl font-medium mb-3 opacity-90 tracking-wide uppercase">Yes, grab yours now</p>
+                        <h2 class="text-3xl md:text-5xl font-extrabold text-yellow-300 leading-tight drop-shadow-lg">
+                            Buy 1 and Get 1 FREE,<br><span class="text-white">limited stock, hurry!</span>
+                        </h2>
+                        <img src="../assets/images/p1.jpg" alt="Special Offer" class="mt-8 mx-auto rounded-xl shadow-lg border border-white/20 max-w-full h-auto">
+                    </div>
+                </section>
+
+                <!-- Customer Reviews -->
+                <section class="py-8">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-8 px-4 text-center md:text-left">
+                        Customer Reviews
+                    </h2>
+                    
+                    <!-- Swipeable Reviews Container -->
+                    <div class="relative group">
+                        <!-- Left Arrow -->
+                        <button onclick="scrollReviewsLeft()" class="absolute left-2 top-1/2 -translate-y-1/2 z-30 bg-white/90 hover:bg-white text-gray-800 p-3 rounded-full shadow-lg border border-gray-100 transition-all hover:scale-110 active:scale-95">
+                            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                            </svg>
+                        </button>
+
+                        <!-- Gradient Masks -->
+                        <div class="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-gray-100 to-transparent z-10 pointer-events-none md:block hidden"></div>
+                        <div class="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-gray-100 to-transparent z-10 pointer-events-none md:block hidden"></div>
+
+                        <div id="reviews-container" class="flex overflow-x-auto gap-6 px-4 pb-4 snap-x snap-mandatory scrollbar-hide">
+                            <!-- Reviews will be duplicated for infinite scroll -->
+                        </div>
+
+                        <!-- Right Arrow -->
+                        <button onclick="scrollReviewsRight()" class="absolute right-2 top-1/2 -translate-y-1/2 z-30 bg-white/90 hover:bg-white text-gray-800 p-3 rounded-full shadow-lg border border-gray-100 transition-all hover:scale-110 active:scale-95">
+                            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <style>
+                        .scrollbar-hide::-webkit-scrollbar {
+                            display: none;
+                        }
+                        .scrollbar-hide {
+                            -ms-overflow-style: none;
+                            scrollbar-width: none;
+                        }
+                    </style>
+                </section>
+
+                <!-- Contributing Section -->
+                <section class="bg-white rounded-2xl shadow-lg overflow-hidden p-8">
+                    <div class="flex flex-col space-y-4 text-center items-center">
+                        <h2 class="text-2xl md:text-3xl font-bold text-gray-800">
+                            You are not buying just a backpack.
+                        </h2>
+                        <p class="text-3xl md:text-4xl font-extrabold text-purple-600">
+                            You are contributing to change.
+                        </p>
+                        <p class="text-xl text-gray-700 font-medium">
+                            Feeding food to those in need.
+                        </p>
+                        <p class="text-gray-600 font-semibold">
+                            On each purchase, we give food to those in need.
+                        </p>
+                        <div class="w-24 h-1.5 bg-purple-600 rounded-full mt-4"></div>
+                    </div>
+                </section>
+
+                <!-- Recommended Section -->
+                <section class="bg-white rounded-2xl shadow-lg p-6">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center md:text-left">
+                        Recommended For You
+                    </h2>
+                    <div class="flex overflow-x-auto gap-4 pb-4 snap-x snap-mandatory scrollbar-hide">
+                        <!-- Card 1: Kimi (Red - Current Page) -->
+                        <a href="red.html" class="min-w-[160px] md:min-w-[180px] flex-shrink-0 bg-purple-50 border-2 border-purple-600 rounded-xl shadow-sm hover:shadow-md transition-shadow snap-center overflow-hidden flex flex-col">
+                            <div class="h-40 overflow-hidden bg-gray-50 flex items-center justify-center p-4">
+                                <img src="../assets/images/p1.jpg" alt="Kimi" class="w-full h-full object-contain">
+                            </div>
+                            <div class="p-3 flex flex-col flex-grow">
+                                <h3 class="text-sm font-semibold text-gray-800 mb-2 line-clamp-2 h-10">Kimi</h3>
+                                <div class="mt-auto flex items-center justify-between">
+                                    <div class="flex flex-col">
+                                        <span class="text-xs text-gray-400 line-through">₹1,399</span>
+                                        <span class="text-lg font-bold text-gray-900">₹979</span>
+                                    </div>
+                                    <div class="text-xs font-bold text-green-600 bg-green-100 px-2 py-1 rounded">You're here!</div>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Card 2: Ascend (Yellow) -->
+                        <a href="yellow.html" class="min-w-[160px] md:min-w-[180px] flex-shrink-0 bg-white border border-gray-100 rounded-xl shadow-sm hover:shadow-md transition-shadow snap-center overflow-hidden flex flex-col">
+                            <div class="h-40 overflow-hidden bg-gray-50 flex items-center justify-center p-4">
+                                <img src="../assets/images/p2.jpg" alt="Ascend" class="w-full h-full object-contain">
+                            </div>
+                            <div class="p-3 flex flex-col flex-grow">
+                                <h3 class="text-sm font-semibold text-gray-800 mb-2 line-clamp-2 h-10">Ascend</h3>
+                                <div class="mt-auto flex items-center justify-between">
+                                    <div class="flex flex-col">
+                                        <span class="text-xs text-gray-400 line-through">₹1,399</span>
+                                        <span class="text-lg font-bold text-gray-900">₹979</span>
+                                    </div>
+                                    <div class="text-xs font-bold text-red-600 bg-red-100 px-2 py-1 rounded">30% OFF</div>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Card 3: Chase (Blue) -->
+                        <a href="blue.html" class="min-w-[160px] md:min-w-[180px] flex-shrink-0 bg-white border border-gray-100 rounded-xl shadow-sm hover:shadow-md transition-shadow snap-center overflow-hidden flex flex-col">
+                            <div class="h-40 overflow-hidden bg-gray-50 flex items-center justify-center p-4">
+                                <img src="../assets/images/p3.jpg" alt="Chase" class="w-full h-full object-contain">
+                            </div>
+                            <div class="p-3 flex flex-col flex-grow">
+                                <h3 class="text-sm font-semibold text-gray-800 mb-2 line-clamp-2 h-10">Chase</h3>
+                                <div class="mt-auto flex items-center justify-between">
+                                    <div class="flex flex-col">
+                                        <span class="text-xs text-gray-400 line-through">₹1,399</span>
+                                        <span class="text-lg font-bold text-gray-900">₹979</span>
+                                    </div>
+                                    <div class="text-xs font-bold text-red-600 bg-red-100 px-2 py-1 rounded">30% OFF</div>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Card 4: Magic (Green) -->
+                        <a href="green.html" class="min-w-[160px] md:min-w-[180px] flex-shrink-0 bg-white border border-gray-100 rounded-xl shadow-sm hover:shadow-md transition-shadow snap-center overflow-hidden flex flex-col">
+                            <div class="h-40 overflow-hidden bg-gray-50 flex items-center justify-center p-4">
+                                <img src="../assets/images/p4.jpg" alt="Magic" class="w-full h-full object-contain">
+                            </div>
+                            <div class="p-3 flex flex-col flex-grow">
+                                <h3 class="text-sm font-semibold text-gray-800 mb-2 line-clamp-2 h-10">Magic</h3>
+                                <div class="mt-auto flex items-center justify-between">
+                                    <div class="flex flex-col">
+                                        <span class="text-xs text-gray-400 line-through">₹1,399</span>
+                                        <span class="text-lg font-bold text-gray-900">₹979</span>
+                                    </div>
+                                    <div class="text-xs font-bold text-red-600 bg-red-100 px-2 py-1 rounded">30% OFF</div>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Card 5: Kibo (Red - Premium) -->
+                        <a href="red.html" class="min-w-[160px] md:min-w-[180px] flex-shrink-0 bg-white border border-gray-100 rounded-xl shadow-sm hover:shadow-md transition-shadow snap-center overflow-hidden flex flex-col">
+                            <div class="h-40 overflow-hidden bg-gray-50 flex items-center justify-center p-4">
+                                <img src="../assets/images/p1.jpg" alt="Kibo" class="w-full h-full object-contain">
+                            </div>
+                            <div class="p-3 flex flex-col flex-grow">
+                                <h3 class="text-sm font-semibold text-gray-800 mb-2 line-clamp-2 h-10">Kibo Premium</h3>
+                                <div class="mt-auto flex items-center justify-between">
+                                    <div class="flex flex-col">
+                                        <span class="text-xs text-gray-400 line-through">₹3,999</span>
+                                        <span class="text-lg font-bold text-gray-900">₹1,999</span>
+                                    </div>
+                                    <div class="text-xs font-bold text-red-600 bg-red-100 px-2 py-1 rounded">50% OFF</div>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Card 6: Tsuki (Yellow - Premium) -->
+                        <a href="yellow.html" class="min-w-[160px] md:min-w-[180px] flex-shrink-0 bg-white border border-gray-100 rounded-xl shadow-sm hover:shadow-md transition-shadow snap-center overflow-hidden flex flex-col">
+                            <div class="h-40 overflow-hidden bg-gray-50 flex items-center justify-center p-4">
+                                <img src="../assets/images/p2.jpg" alt="Tsuki" class="w-full h-full object-contain">
+                            </div>
+                            <div class="p-3 flex flex-col flex-grow">
+                                <h3 class="text-sm font-semibold text-gray-800 mb-2 line-clamp-2 h-10">Tsuki Eco</h3>
+                                <div class="mt-auto flex items-center justify-between">
+                                    <div class="flex flex-col">
+                                        <span class="text-xs text-gray-400 line-through">₹3,999</span>
+                                        <span class="text-lg font-bold text-gray-900">₹1,999</span>
+                                    </div>
+                                    <div class="text-xs font-bold text-red-600 bg-red-100 px-2 py-1 rounded">50% OFF</div>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Card 7: Capacity (Green - Premium) -->
+                        <a href="green.html" class="min-w-[160px] md:min-w-[180px] flex-shrink-0 bg-white border border-gray-100 rounded-xl shadow-sm hover:shadow-md transition-shadow snap-center overflow-hidden flex flex-col">
+                            <div class="h-40 overflow-hidden bg-gray-50 flex items-center justify-center p-4">
+                                <img src="../assets/images/p4.jpg" alt="Capacity" class="w-full h-full object-contain">
+                            </div>
+                            <div class="p-3 flex flex-col flex-grow">
+                                <h3 class="text-sm font-semibold text-gray-800 mb-2 line-clamp-2 h-10">Capacity Pro</h3>
+                                <div class="mt-auto flex items-center justify-between">
+                                    <div class="flex flex-col">
+                                        <span class="text-xs text-gray-400 line-through">₹3,999</span>
+                                        <span class="text-lg font-bold text-gray-900">₹1,999</span>
+                                    </div>
+                                    <div class="text-xs font-bold text-red-600 bg-red-100 px-2 py-1 rounded">50% OFF</div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </section>
+
+            </div>
+
+            <!-- Right Column (Sticky Buying Section) - Desktop Only -->
+            <div class="hidden lg:block lg:col-span-3">
+                <div class="lg:sticky lg:top-4">
+                    <div class="w-full bg-purple-50 rounded-2xl shadow-xl overflow-hidden max-w-sm mx-auto border-2 border-purple-100 max-h-[95vh] flex flex-col">
+                        <!-- Product Image -->
+                        <div class="relative h-80 bg-white flex-shrink-0">
+                            <img class="w-full h-full object-cover" src="../assets/images/p1.jpg" alt="Travel Backpack">
+                            <div class="absolute top-3 left-3 bg-purple-600 text-white text-xs font-bold px-2.5 py-1 rounded-full shadow-lg">
+                                ⭐ Best Seller
+                            </div>
+                        </div>
+
+                        <!-- Content Section - Scrollable if needed -->
+                        <div class="p-4 overflow-y-auto flex-grow">
+                            <!-- Product Title & Rating -->
+                            <h3 class="text-lg font-bold text-gray-900 mb-1">Travel Backpack</h3>
+                            <div class="flex items-center mb-2">
+                                <div class="flex text-yellow-400 text-sm">★★★★★</div>
+                                <span class="ml-1.5 text-xs text-gray-600">(4.9/5 • 234 reviews)</span>
+                            </div>
+
+                            <!-- Price -->
+                            <div class="mb-3">
+                                <div class="flex items-baseline gap-2">
+                                    <span class="text-2xl font-bold text-gray-900">₹1,999</span>
+                                    <span class="text-sm line-through text-gray-400">₹3,999</span>
+                                    <span class="text-xs font-semibold text-green-600 bg-green-50 px-2 py-0.5 rounded">50% OFF</span>
+                                </div>
+                                <p class="text-xs text-purple-600 font-medium mt-1">🎁 Buy 1 Get 1 FREE offer!</p>
+                            </div>
+
+                            <!-- Stock Urgency -->
+                            <div class="text-xs text-red-600 font-semibold mb-3 bg-red-50 py-1.5 px-2 rounded animate-pulse">
+                                ⚡ Only 4 left in stock - Order soon!
+                            </div>
+
+                            <!-- Quantity Selector -->
+                            <div class="mb-3">
+                                <label class="text-xs font-semibold text-gray-700 block mb-1.5">Quantity:</label>
+                                <div class="flex items-center border-2 border-purple-200 rounded-lg bg-white w-32">
+                                    <button onclick="decreaseDesktopQuantity()" class="px-3 py-1.5 text-purple-600 hover:bg-purple-50 font-bold text-lg transition-colors">−</button>
+                                    <span id="desktop-quantity" class="flex-1 text-center font-bold text-base text-gray-900">1</span>
+                                    <button onclick="increaseDesktopQuantity()" class="px-3 py-1.5 text-purple-600 hover:bg-purple-50 font-bold text-lg transition-colors">+</button>
+                                </div>
+                            </div>
+
+                            <!-- CTA Buttons - Side by Side -->
+                            <div class="grid grid-cols-2 gap-2 mb-3">
+                                <button class="bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2.5 px-3 rounded-lg text-sm transition-all shadow-md hover:shadow-lg">
+                                    Add to Cart
+                                </button>
+                                <button class="bg-gray-900 hover:bg-black text-white font-semibold py-2.5 px-3 rounded-lg text-sm transition-all">
+                                    Buy Now
+                                </button>
+                            </div>
+
+                            <!-- Social Impact Message -->
+                            <div class="bg-green-50 border border-green-200 rounded-lg p-2 mb-3">
+                                <div class="flex items-start text-green-700 text-xs font-medium">
+                                    <svg class="w-4 h-4 mr-1.5 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                                    </svg>
+                                    <span>We feed someone in need with every purchase 💚</span>
+                                </div>
+                            </div>
+
+                            <!-- Trust Badges -->
+                            <div class="flex items-center justify-between text-xs text-gray-600 pt-2 border-t border-purple-100">
+                                <div class="flex items-center">
+                                    <svg class="w-3.5 h-3.5 mr-1 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                                    </svg>
+                                    <span>Secure</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <svg class="w-3.5 h-3.5 mr-1 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M8 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"></path>
+                                        <path d="M3 4a1 1 0 00-1 1v10a1 1 0 001 1h1.05a2.5 2.5 0 014.9 0H10a1 1 0 001-1V5a1 1 0 00-1-1H3zM14 7a1 1 0 00-1 1v6.05A2.5 2.5 0 0115.95 16H17a1 1 0 001-1v-5a1 1 0 00-.293-.707l-2-2A1 1 0 0015 7h-1z"></path>
+                                    </svg>
+                                    <span>Fast Ship</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <svg class="w-3.5 h-3.5 mr-1 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span>Certified</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <!-- What You'll Get Section -->
-            <section class="bg-white rounded-2xl p-8 shadow-lg mb-16">
-                <h2 class="text-3xl font-bold text-gray-900 mb-8">What's Included</h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="flex items-start space-x-4">
-                        <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                            <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
-                            </svg>
-                        </div>
-                        <div>
-                            <h3 class="font-bold text-gray-900 mb-1">Premium Packaging</h3>
-                            <p class="text-gray-600 text-sm">Comes in elegant gift box</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start space-x-4">
-                        <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                            <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                            </svg>
-                        </div>
-                        <div>
-                            <h3 class="font-bold text-gray-900 mb-1">1 Year Warranty</h3>
-                            <p class="text-gray-600 text-sm">Quality guarantee on all products</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start space-x-4">
-                        <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                            <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
-                            </svg>
-                        </div>
-                        <div>
-                            <h3 class="font-bold text-gray-900 mb-1">Care Guide</h3>
-                            <p class="text-gray-600 text-sm">Maintenance instructions included</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Product Details -->
-            <section class="bg-white rounded-2xl p-8 shadow-lg mb-16">
-                <h2 class="text-3xl font-bold text-gray-900 mb-6">Product Specifications</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div class="border-b border-gray-200 pb-4">
-                        <span class="font-semibold text-gray-900">Material:</span>
-                        <span class="text-gray-600 ml-2">Premium Genuine Leather</span>
-                    </div>
-                    <div class="border-b border-gray-200 pb-4">
-                        <span class="font-semibold text-gray-900">Dimensions:</span>
-                        <span class="text-gray-600 ml-2">35cm x 28cm x 12cm</span>
-                    </div>
-                    <div class="border-b border-gray-200 pb-4">
-                        <span class="font-semibold text-gray-900">Weight:</span>
-                        <span class="text-gray-600 ml-2">800 grams</span>
-                    </div>
-                    <div class="border-b border-gray-200 pb-4">
-                        <span class="font-semibold text-gray-900">Color Options:</span>
-                        <span class="text-gray-600 ml-2">Black, Brown, Tan</span>
-                    </div>
-                    <div class="border-b border-gray-200 pb-4">
-                        <span class="font-semibold text-gray-900">Closure Type:</span>
-                        <span class="text-gray-600 ml-2">Magnetic Snap & Zipper</span>
-                    </div>
-                    <div class="border-b border-gray-200 pb-4">
-                        <span class="font-semibold text-gray-900">Warranty:</span>
-                        <span class="text-gray-600 ml-2">1 Year Manufacturer Warranty</span>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Customer Reviews -->
-            <section class="bg-white rounded-2xl p-8 shadow-lg">
-                <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Customer Reviews</h2>
-                
-                <!-- Desktop: Marquee Container with Fade Borders -->
-                <div class="hidden md:block relative overflow-hidden">
-                    <!-- Left Fade -->
-                    <div class="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
-                    
-                    <!-- Right Fade -->
-                    <div class="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
-                    
-                    <!-- Scrolling Reviews Container -->
-                    <div id="reviewsMarquee" class="flex gap-8 marquee-content">
-                        <!-- Reviews will be loaded here dynamically -->
-                    </div>
-                </div>
-
-                <!-- Mobile: Horizontal Scroll -->
-                <div class="md:hidden overflow-x-auto pb-4 hide-scrollbar-mobile">
-                    <div id="reviewsMarqueeMobile" class="flex gap-4">
-                        <!-- Reviews will be loaded here dynamically -->
-                    </div>
-                </div>
-                <p class="md:hidden text-center text-gray-500 text-sm mt-2">Swipe →</p>
-            </section>
-            
-            <style>
-                @keyframes marqueeScroll {
-                    0% {
-                        transform: translateX(0);
-                    }
-                    100% {
-                        transform: translateX(-50%);
-                    }
-                }
-                
-                .marquee-content {
-                    animation: marqueeScroll 10s linear infinite;
-                    animation-play-state: running;
-                    will-change: transform;
-                }
-                
-                .marquee-content.paused {
-                    animation-play-state: paused;
-                }
-                
-                .review-card {
-                    min-width: 350px;
-                    max-width: 350px;
-                    width: 350px;
-                    flex-shrink: 0;
-                    background: white;
-                    transition: transform 0.3s ease;
-                }
-                
-                @media (max-width: 768px) {
-                    .review-card {
-                        min-width: 280px;
-                        max-width: 280px;
-                        width: 280px;
-                    }
-                }
-
-                .hide-scrollbar-mobile::-webkit-scrollbar {
-                    display: none;
-                }
-                .hide-scrollbar-mobile {
-                    -ms-overflow-style: none;
-                    scrollbar-width: none;
-                }
-            </style>
         </div>
     </div>
 
-    <!-- Footer -->
-    <footer class="bg-black text-white" style="min-height: 60vh;">
-        <div class="max-w-7xl mx-auto px-4 py-16">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-                <!-- Brand Section -->
-                <div class="lg:col-span-1">
-                    <div class="flex items-center space-x-2 mb-6">
-                        <img src="../assets/logo/logo.png" alt="ScoreBagz Logo" class="h-16">
-                    </div>
-                    <p class="text-gray-300 mb-6 leading-relaxed">
-                        Premium quality bags for every occasion. Crafted with care, designed for life.
-                    </p>
-                    <div class="flex space-x-4">
-                        <a href="https://twitter.com" class="social-icon twitter w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-gray-700 transition-all">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
-                            </svg>
-                        </a>
-                        <a href="https://instagram.com" class="social-icon instagram w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-gray-700 transition-all">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                            </svg>
-                        </a>
-                        <a href="https://wa.me/919876543210" class="social-icon whatsapp w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-gray-700 transition-all">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.864 3.488"/>
-                            </svg>
-                        </a>
-                    </div>
+    <!-- Mobile Sticky Buttons -->
+    <div class="lg:hidden fixed bottom-0 left-0 w-full z-50 bg-white p-4 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)] border-t border-gray-200 grid grid-cols-2 gap-4">
+        <!-- Left Button with Badge -->
+        <div class="relative">
+            <span class="absolute -top-2 -left-2 z-10 bg-yellow-400 text-purple-800 text-xs font-bold px-2 py-1 rounded-md flex items-center gap-1 shadow-lg">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M5 4a2 2 0 012-2h6a2 2 0 012 2v14l-5-2.5L5 18V4z"></path>
+                </svg>
+                Free Bag
+            </span>
+            <button class="w-full h-full flex flex-col items-center justify-center text-center p-4 bg-purple-600 text-white rounded-xl shadow-md hover:bg-purple-700 transition-all duration-300">
+                <div class="font-bold text-2xl">
+                    <span class="text-sm line-through opacity-70 mr-1">₹3999</span>
+                    <span>₹1999</span>
                 </div>
-
-                <!-- Quick Links -->
-                <div>
-                    <h4 class="text-xl font-bold mb-6 text-white">Quick Links</h4>
-                    <ul class="space-y-3">
-                        <li><a href="../index.html" class="text-gray-300 hover:text-purple-400 transition-colors">Home</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-purple-400 transition-colors">Products</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-purple-400 transition-colors">About Us</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-purple-400 transition-colors">Contact</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-purple-400 transition-colors">Track Order</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-purple-400 transition-colors">Bulk Orders</a></li>
-                    </ul>
-                </div>
-
-                <!-- Customer Service -->
-                <div>
-                    <h4 class="text-xl font-bold mb-6 text-white">Customer Service</h4>
-                    <ul class="space-y-3">
-                        <li><a href="#" class="text-gray-300 hover:text-purple-400 transition-colors">Help Center</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-purple-400 transition-colors">Shipping Info</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-purple-400 transition-colors">Returns & Exchanges</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-purple-400 transition-colors">Size Guide</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-purple-400 transition-colors">Care Instructions</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-purple-400 transition-colors">Warranty</a></li>
-                    </ul>
-                </div>
-
-                <!-- Contact Info -->
-                <div>
-                    <h4 class="text-xl font-bold mb-6 text-white">Contact Us</h4>
-                    <div class="space-y-4">
-                        <div class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-purple-400 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                            </svg>
-                            <div>
-                                <p class="text-gray-300">Shaheer place</p>
-                                <p class="text-gray-300">Somewhere is Tamil Nadu lol</p>
-                            </div>
-                        </div>
-                        <div class="flex items-center space-x-3">
-                            <svg class="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
-                            </svg>
-                            <p class="text-gray-300">+91 87666 79843</p>
-                        </div>
-                        <div class="flex items-center space-x-3">
-                            <svg class="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                            </svg>
-                            <p class="text-gray-300">scorebagz@gmail.com</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Bottom Footer -->
-            <div class="border-t border-gray-800 pt-8">
-                <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-                    <div class="flex flex-wrap justify-center md:justify-start space-x-6 text-sm">
-                        <a href="#" class="text-gray-400 hover:text-purple-400 transition-colors">Privacy Policy</a>
-                        <a href="#" class="text-gray-400 hover:text-purple-400 transition-colors">Terms & Conditions</a>
-                        <a href="#" class="text-gray-400 hover:text-purple-400 transition-colors">Refund Policy</a>
-                        <a href="#" class="text-gray-400 hover:text-purple-400 transition-colors">Cookie Policy</a>
-                        <a href="#" class="text-gray-400 hover:text-purple-400 transition-colors">Disclaimer</a>
-                    </div>
-                    <div class="text-sm text-gray-400">
-                        <p>© 2025 ScoreBagz. All rights reserved.</p>
-                    </div>
-                </div>
-                
-                <!-- Payment & Security -->
-                <div class="mt-6 pt-6 border-t border-gray-800">
-                    <div class="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
-                        <div class="flex items-center space-x-4">
-                            <p class="text-sm text-gray-400">Secure payments:</p>
-                            <div class="flex space-x-2">
-                                <div class="bg-gray-800 px-3 py-1 rounded text-xs text-gray-300">Visa</div>
-                                <div class="bg-gray-800 px-3 py-1 rounded text-xs text-gray-300">Mastercard</div>
-                                <div class="bg-gray-800 px-3 py-1 rounded text-xs text-gray-300">PayPal</div>
-                                <div class="bg-gray-800 px-3 py-1 rounded text-xs text-gray-300">UPI</div>
-                            </div>
-                        </div>
-                        <div class="text-xs text-gray-400">
-                            <p>🔒 SSL Secured | 🛡️ 100% Safe Shopping</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            </button>
         </div>
-    </footer>
+
+        <!-- Right Button -->
+        <button class="w-full h-full flex flex-col items-center justify-center text-center p-4 bg-gray-600 text-white rounded-xl shadow-md hover:bg-gray-700 transition-all duration-300">
+            <div class="font-bold text-2xl">
+                <span class="text-sm line-through opacity-70 mr-1">₹3999</span>
+                <span>₹2799</span>
+            </div>
+        </button>
+    </div>
 
     <script src="../js/script.js"></script>
     <script>
-        // Inline reviews loading
+        // Reviews Data
         const reviewsData = [
-            {"id":1,"name":"Danish Sayyad","rating":5,"image":"../assets/sample_2.jpg","review":"Amazing quality bags! I've been using my leather bag for 2 months now and it still looks brand new. Highly recommend ScoreBagz!"},
-            {"id":2,"name":"Abdul Mulla","rating":5,"image":"../assets/sample_1.jpg","review":"Fast delivery and excellent customer service. The canvas tote is perfect for my daily needs. Will definitely shop again!"},
-            {"id":3,"name":"Anjali Singh","rating":4,"image":"../assets/icons/person.svg","review":"The travel backpack is a game-changer! So many compartments and the quality is outstanding. Worth every penny!"},
-            {"id":4,"name":"Rahul Sharma","rating":5,"image":"../assets/icons/person.svg","review":"Best purchase ever! The backpack is stylish, comfortable, and fits everything I need for college. Love it!"},
-            {"id":5,"name":"Priya Patel","rating":5,"image":"../assets/icons/person.svg","review":"Exceeded my expectations! The build quality is fantastic and the design is so elegant. Perfect for work and travel."},
-            {"id":6,"name":"Arjun Mehta","rating":4,"image":"../assets/icons/person.svg","review":"Great bag with lots of pockets. Very practical for daily use. The only minor thing is I wish it came in more colors."},
-            {"id":7,"name":"Sneha Reddy","rating":5,"image":"../assets/icons/person.svg","review":"Absolutely love my ScoreBagz backpack! It's durable, spacious, and the free gift was such a nice surprise. Highly recommended!"},
-            {"id":8,"name":"Vikram Joshi","rating":5,"image":"../assets/icons/person.svg","review":"Perfect for gym and office! Water-resistant material saved my laptop during the rains. Worth every rupee!"},
-            {"id":9,"name":"Kavita Desai","rating":5,"image":"../assets/icons/person.svg","review":"Such a thoughtful brand! The bag quality is top-notch and knowing my purchase helps feed someone makes me so happy. Keep up the great work!"},
-            {"id":10,"name":"Aditya Kumar","rating":4,"image":"../assets/icons/person.svg","review":"Really impressed with the quality and comfort. The straps are well-padded and it distributes weight evenly. Great for long commutes!"}
+            {"name":"Sarah J.","rating":5,"review":"Absolutely love this backpack! It's spacious, comfortable to wear, and looks fantastic. The free gift was a nice surprise too!","avatarUrl":"../assets/sample_1.jpg"},
+            {"name":"Mike R.","rating":4,"review":"Solid backpack for daily use. The material feels high quality and the zippers are sturdy. Wish it had one more side pocket, but overall it's a great buy.","avatarUrl":"../assets/sample_2.jpg"},
+            {"name":"Emily Chen","rating":5,"review":"Perfect for my college needs. Fits my laptop, textbooks, and more. The charity donation aspect made me feel great about my purchase.","avatarUrl":"../assets/icons/person.svg"},
+            {"name":"David K.","rating":5,"review":"I took this on a weekend hiking trip and it held up perfectly. The rain cover was a lifesaver when the weather turned.","avatarUrl":"../assets/icons/person.svg"},
+            {"name":"Lisa M.","rating":5,"review":"The compartments are a game changer. I finally have a place for everything. My laptop feels very secure in the padded sleeve.","avatarUrl":"../assets/icons/person.svg"},
+            {"name":"James P.","rating":4,"review":"Stylish and functional. I get compliments on it at work all the time. Very comfortable shoulder straps.","avatarUrl":"../assets/icons/person.svg"},
+            {"name":"Anita S.","rating":5,"review":"Bought this for the water resistance and it didn't disappoint. Walked home in the rain and everything inside was bone dry.","avatarUrl":"../assets/icons/person.svg"},
+            {"name":"Robert T.","rating":5,"review":"Best backpack I've owned in years. The build quality is exceptional for the price. Highly recommended!","avatarUrl":"../assets/icons/person.svg"},
         ];
 
-        function getStars(rating) {
-            return '★'.repeat(rating) + '☆'.repeat(5 - rating);
-        }
-
+        // Create review card
         function createReviewCard(review) {
             return `
-                <div class="review-card p-6 rounded-xl shadow-md">
+                <div class="w-80 md:w-96 flex-shrink-0 snap-center bg-white p-6 rounded-xl shadow-md">
                     <div class="flex items-center mb-4">
-                        <img src="${review.image}" alt="${review.name}" class="w-12 h-12 rounded-full border-2 border-purple-200 mr-4" onerror="this.src='../assets/icons/person.svg'">
+                        <img src="${review.avatarUrl}" alt="${review.name}" class="w-12 h-12 rounded-full border-2 border-purple-200 mr-4" onerror="this.src='../assets/icons/person.svg'">
                         <div>
-                            <h4 class="font-bold text-black">${review.name}</h4>
+                            <h4 class="font-bold text-gray-900">${review.name}</h4>
                             <div class="flex text-yellow-400">
-                                ${getStars(review.rating)}
+                                ${'★'.repeat(review.rating)}${'☆'.repeat(5 - review.rating)}
                             </div>
                         </div>
                     </div>
-                    <p class="text-gray-600 italic">"${review.review}"</p>
+                    <p class="text-gray-700 leading-relaxed">"${review.review}"</p>
                 </div>
             `;
         }
 
+        // Initialize reviews
         function initReviews() {
-            const marqueeContainer = document.getElementById('reviewsMarquee');
-            const mobileContainer = document.getElementById('reviewsMarqueeMobile');
-            
-            if (!marqueeContainer && !mobileContainer) return;
-
+            const container = document.getElementById('reviews-container');
             const reviewsHTML = reviewsData.map(createReviewCard).join('');
+            // Duplicate for infinite scroll
+            container.innerHTML = reviewsHTML + reviewsHTML;
+        }
+
+        // Scroll functions
+        function scrollReviewsLeft() {
+            const container = document.getElementById('reviews-container');
+            container.scrollBy({ left: -340, behavior: 'smooth' });
+        }
+
+        function scrollReviewsRight() {
+            const container = document.getElementById('reviews-container');
+            container.scrollBy({ left: 340, behavior: 'smooth' });
+        }
+
+        // Quantity functions
+        let mobileQty = 1;
+        let desktopQty = 1;
+
+        function increaseQuantity() {
+            mobileQty++;
+            document.getElementById('mobile-quantity').textContent = mobileQty;
+        }
+
+        function decreaseQuantity() {
+            if (mobileQty > 1) {
+                mobileQty--;
+                document.getElementById('mobile-quantity').textContent = mobileQty;
+            }
+        }
+
+        function increaseDesktopQuantity() {
+            desktopQty++;
+            document.getElementById('desktop-quantity').textContent = desktopQty;
+        }
+
+        function decreaseDesktopQuantity() {
+            if (desktopQty > 1) {
+                desktopQty--;
+                document.getElementById('desktop-quantity').textContent = desktopQty;
+            }
+        }
+
+        // Horizontal scroll feature for mobile
+        function initHorizontalScroll() {
+            const container = document.getElementById('mobile-features-scroll-container');
+            const track = document.getElementById('mobile-features-track');
             
-            // Desktop: duplicate for seamless loop
-            if (marqueeContainer) {
-                marqueeContainer.innerHTML = reviewsHTML + reviewsHTML;
+            if (!container || !track) return;
 
-                let pauseTimeout;
-                marqueeContainer.addEventListener('mouseenter', function() {
-                    this.classList.add('paused');
-                    clearTimeout(pauseTimeout);
-                });
-                
-                marqueeContainer.addEventListener('mouseleave', function() {
-                    clearTimeout(pauseTimeout);
-                    pauseTimeout = setTimeout(() => {
-                        this.classList.remove('paused');
-                    }, 3000);
-                });
+            // Set container height based on number of features (5 features)
+            const numFeatures = 5;
+            container.style.height = `${numFeatures * 100}vh`;
+            track.style.width = `${numFeatures * 100}vw`;
+
+            function handleScroll() {
+                const rect = container.getBoundingClientRect();
+                const windowHeight = window.innerHeight;
+
+                // Check if container is in viewport
+                if (rect.top > windowHeight || rect.top + rect.height < 0) {
+                    return;
+                }
+
+                const scrollableHeight = rect.height - windowHeight;
+                if (scrollableHeight <= 0) return;
+
+                // Calculate progress (0 to 1)
+                let progress = -rect.top / scrollableHeight;
+                progress = Math.max(0, Math.min(1, progress));
+
+                // Calculate horizontal translation
+                const trackWidth = track.scrollWidth;
+                const trackScrollableWidth = trackWidth - window.innerWidth;
+                const translateX = -progress * trackScrollableWidth;
+
+                track.style.transform = `translateX(${translateX}px)`;
             }
 
-            // Mobile: duplicate for seamless infinite scroll
-            if (mobileContainer) {
-                mobileContainer.innerHTML = reviewsHTML + reviewsHTML + reviewsHTML;
-                
-                // Infinite scroll logic
-                let isScrolling = false;
-                mobileContainer.parentElement.addEventListener('scroll', function() {
-                    if (isScrolling) return;
-                    
-                    const scrollLeft = this.scrollLeft;
-                    const scrollWidth = mobileContainer.scrollWidth / 3; // Each set is 1/3 of total
-                    
-                    // If scrolled past 2/3, reset to 1/3
-                    if (scrollLeft >= scrollWidth * 2) {
-                        isScrolling = true;
-                        this.scrollLeft = scrollLeft - scrollWidth;
-                        setTimeout(() => isScrolling = false, 50);
-                    }
-                    // If scrolled before 1/3, jump to 2/3
-                    else if (scrollLeft <= 0) {
-                        isScrolling = true;
-                        this.scrollLeft = scrollWidth;
-                        setTimeout(() => isScrolling = false, 50);
-                    }
-                });
-                
-                // Start in the middle set
-                mobileContainer.parentElement.scrollLeft = mobileContainer.scrollWidth / 3;
-            }
+            window.addEventListener('scroll', handleScroll, { passive: true });
+            handleScroll(); // Initial call
         }
 
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', initReviews);
-        } else {
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
             initReviews();
-        }
+            initHorizontalScroll();
+        });
     </script>
 </body>
 </html>
